@@ -2,7 +2,12 @@
 import React from "react";
 import DashboardHero from "./Dashhero";
 import { CropCard } from "./CardVarients/CropCard";
-import { MapCard } from "./CardVarients/MapCard";
+import dynamic from "next/dynamic";
+
+const MapCard = dynamic(() => import("./CardVarients/MapCard").then(mod => mod.MapCardClient), {
+  ssr: false, // critical: disable SSR
+});
+
 export default function AdminDashboard() {
   const data = [
     <CropCard key={1} />,

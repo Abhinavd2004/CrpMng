@@ -4,10 +4,8 @@ import React, { useState } from "react";
 interface AdminWrapperProps {
   children: React.ReactNode;
 }
-
 export const AdminWrapper: React.FC<AdminWrapperProps> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
   return (
     <div className="min-h-screen w-full ">
       <TopBar />
